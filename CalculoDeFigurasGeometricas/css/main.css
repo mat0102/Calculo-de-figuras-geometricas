@@ -36,6 +36,7 @@ body {
     justify-content: center;
     margin: auto;
     overflow: hidden;
+    max-width: 100px;
 }
 
 .box {
@@ -45,7 +46,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efecto sombra */
     margin: 10px;
     max-width: 300px;
-    width: 340px;
+    width: 30%;
     padding: 20px;
 }
 
@@ -106,4 +107,9 @@ body {
     margin-top: 20px;
     font-size: 1.2em;
     color: #2980b9;
+}
+@media screen and (max-width:1021px){
+.figures{
+    width: 100%;
+}
 }
