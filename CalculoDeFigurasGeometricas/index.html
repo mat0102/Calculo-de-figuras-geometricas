@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras Geométricas</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        // Funciones para calcular perímetro y área
+        function calcularCuadrado() {
+            const lado = parseFloat(document.getElementById('lado-cuadrado').value);
+            const perimetro = lado * 4;
+            const area = lado * lado;
+            document.getElementById('resultado-cuadrado').innerText = `Perímetro: ${perimetro} cm, Área: ${area} cm²`;
+        }
+
+        function calcularPerimetroTriangulo() {
+            const lado1 = parseFloat(document.getElementById('lado1-triangulo').value);
+            const lado2 = parseFloat(document.getElementById('lado2-triangulo').value);
+            const lado3 = parseFloat(document.getElementById('lado3-triangulo').value);
+            const perimetro = lado1 + lado2 + lado3;
+            document.getElementById('resultado-perimetro-triangulo').innerText = `Perímetro: ${perimetro} cm`;
+        }
+
+        function calcularAreaTriangulo() {
+            const base = parseFloat(document.getElementById('base-triangulo').value);
+            const altura = parseFloat(document.getElementById('altura-triangulo').value);
+            const area = (base * altura) / 2;
+            document.getElementById('resultado-area-triangulo').innerText = `Área: ${area} cm²`;
+        }
+
+        function calcularCirculo() {
+            const radio = parseFloat(document.getElementById('radio-circulo').value);
+            const diametro = 2 * radio;
+            const perimetro = 2 * Math.PI * radio;
+            const area = Math.PI * radio * radio;
+            document.getElementById('resultado-circulo').innerText = `Diámetro: ${diametro.toFixed(2)} cm, Perímetro: ${perimetro.toFixed(2)} cm, Área: ${area.toFixed(2)} cm²`;
+        }
+    </script>
+</head>
+<body>
+    <!--ENCABEZADO-->
+    <header class="header">
+        <h1 class="header-title">Figuras Geométricas</h1>
+        <p class="header-description">
+            Calcular diferentes medidas de figuras geométricas como área y perímetro.
+        </p>
+    </header>
+
+    <!--SECCIÓN DE CAJAS-->
+    <section class="figure">
+        <div class="box">
+            <div class="box-header">
+                <h2>Cuadrado</h2>
+            </div>
+            <div class="box-main">
+                <p class="box-main__text">¿Cuánto mide cada lado de tu cuadrado?</p>
+                <input class="box-main__input" type="number" id="lado-cuadrado">
+                <button class="box-main__btn" type="button" onclick="calcularCuadrado()">Calcular</button>
+                <p id="resultado-cuadrado"></p>
+            </div>
+            </div>
+            <div class="box">
+            <div class="box-header">
+                <h2>Triángulo</h2>
+            </div>
+            <div class="box-main">
+                <p class="box-main__text">¿Cuánto mide cada lado de tu triángulo?</p>
+                <input class="box-main__input" type="number" id="lado1-triangulo">
+                <input class="box-main__input" type="number" id="lado2-triangulo">
+                <input class="box-main__input" type="number" id="lado3-triangulo">
+                <button class="box-main__btn" type="button" onclick="calcularPerimetroTriangulo()">Calcular Perímetro</button>
+                <p id="resultado-perimetro-triangulo"></p>
+                <p class="box-main__text">¿Cuánto mide la base y la altura de tu triángulo?</p>
+                <input class="box-main__input" type="number" id="base-triangulo">
+                <input class="box-main__input" type="number" id="altura-triangulo">
+                <button class="box-main__btn" type="button" onclick="calcularAreaTriangulo()">Calcular Área</button>
+                <p id="resultado-area-triangulo"></p>
+            </div>
+            </div>
+            <div class="box">
+
+            <div class="box-header">
+                <h2>Círculo</h2>
+            </div>
+            <div class="box-main">
+                <p class="box-main__text">¿Cuánto mide el radio de tu círculo?</p>
+                <input class="box-main__input" type="number" id="radio-circulo">
+                <button class="box-main__btn" type="button" onclick="calcularCirculo()">Calcular</button>
+                <p id="resultado-circulo"></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
