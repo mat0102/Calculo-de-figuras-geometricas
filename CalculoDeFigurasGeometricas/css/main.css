@@ -35,21 +35,18 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
-    overflow: hidden;
-    max-width: 100px;
 }
 
 .box {
-    float: left;
     background-color: #ecf0f1;
     border: 1px solid #ccc; /* Agrega un borde */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efecto sombra */
     margin: 10px;
     max-width: 300px;
-    width: 30%;
+    width: calc(33.33% - 20px); /* Ajustar el ancho para mantener las cajas dentro del contenedor */
     padding: 20px;
+    box-sizing: border-box; /* Asegura que padding no afecte el tamaño total de la caja */
 }
-
 
 .box-header {
     background-color: #3498db;
@@ -94,13 +91,12 @@ body {
 }
 
 /* Respuestas */
-.aswer, .result {
+.answer, .result {
     background-color: #ecf0f1;
     border-radius: 10px;
     margin: 20px auto;
     max-width: 600px;
     padding: 20px;
-    text-align: center;
 }
 
 #resultado-cuadrado, #resultado-perimetro-triangulo, #resultado-area-triangulo, #resultado-circulo {
@@ -108,8 +104,15 @@ body {
     font-size: 1.2em;
     color: #2980b9;
 }
-@media screen and (max-width:1021px){
-.figures{
-    width: 100%;
+
+@media screen and (max-width: 1021px) {
+    .box {
+        width: calc(50% - 20px); /* Ajustar el ancho al 50% para pantallas más pequeñas */
+    }
 }
+
+@media screen and (max-width: 768px) {
+    .box {
+        width: calc(100% - 20px); /* Ajustar el ancho al 100% para pantallas muy pequeñas */
+    }
 }
